@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32802.440
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FionaWFApp", "FionaWFApp\FionaWFApp.csproj", "{1A5A016C-A6F2-466B-8085-B5BF2DAC36B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuerraIraqApp", "..\GuerraIraqApp\GuerraIraqApp\GuerraIraqApp.csproj", "{B357C66C-0D51-4413-A20D-8DDA41C82B6A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1A5A016C-A6F2-466B-8085-B5BF2DAC36B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A5A016C-A6F2-466B-8085-B5BF2DAC36B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A5A016C-A6F2-466B-8085-B5BF2DAC36B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A5A016C-A6F2-466B-8085-B5BF2DAC36B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B357C66C-0D51-4413-A20D-8DDA41C82B6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B357C66C-0D51-4413-A20D-8DDA41C82B6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B357C66C-0D51-4413-A20D-8DDA41C82B6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B357C66C-0D51-4413-A20D-8DDA41C82B6A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B9F8CF2B-BAD7-4970-8AE1-167993394E9C}
+	EndGlobalSection
+EndGlobal
