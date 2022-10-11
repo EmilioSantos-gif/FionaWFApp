@@ -20,6 +20,7 @@
     <Property Name="Descripcion" Type="varchar" MaxLength="150" Nullable="false" />
     <Property Name="Estado" Type="varchar" MaxLength="50" Nullable="false" />
   </EntityType>
+  <Function Name="SPUltimaPersona" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <EntityContainer Name="FionaWFAppBDModelStoreContainer">
     <EntitySet Name="Persona" EntityType="Self.Persona" Schema="dbo" store:Type="Tables" />
   </EntityContainer>

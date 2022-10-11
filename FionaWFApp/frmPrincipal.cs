@@ -23,10 +23,10 @@ namespace FionaWFApp
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            String TipoDocumento, NoDocumento, Nombres, Apellidos, Sector, Direccion, Telefono, Correo, Sexo, Descripcion, Estado;
+            string TipoDocumento, NoDocumento, Nombres, Apellidos, Sector, Direccion, Telefono, Correo, Sexo, Descripcion, Estado;
             DateTime FechaNacimiento;
             decimal ValorEstimadoPerdida;
-
+            
             TipoDocumento = txtTipoDocumento.Text;
             NoDocumento = txtNoDocumento.Text;
             Nombres = txtNombres.Text;
@@ -37,13 +37,17 @@ namespace FionaWFApp
             Correo = txtCorreo.Text;
             FechaNacimiento = dtpFechaNacimiento.Value;
             Sexo = txtSexo.Text;
+            
             if(!decimal.TryParse(txtValorPerdida.Text, out ValorEstimadoPerdida))
             {
                 MessageBox.Show($"No se pudo parsear el valor perdida: {txtValorPerdida.Text}");
             }
+            
             Descripcion = txtDescripcion.Text;
             Estado = txtEstado.Text;
-
+            
+            //Persona persona = newPersona();
+            
             Persona persona = new Persona
             {
                 TipoDocumento = TipoDocumento,
@@ -60,22 +64,26 @@ namespace FionaWFApp
                 Descripcion = Descripcion,
                 Estado = Estado
             };
-
+            
             FionaWFAppBDEntities context = new FionaWFAppBDEntities();
             context.Persona.Add(persona);
-
-            //context.Persona.Add(newPersona());
 
             try
             {
                 // Your code...
                 // Could also be before try if you know the exception occurs in SaveChanges
 
-                if(context.SaveChanges() == 1)
+                if (context.SaveChanges() == 1)
                 {
                     MessageBox.Show("Persona registrada satisfactoriamente");
 
-                    log.Info($"Se registro persona: {persona}");
+                    frmRecibo recibo = new frmRecibo();
+                    recibo.tipoDocumento = persona.TipoDocumento;
+                    recibo.noDocumento = persona.NoDocumento;
+                    recibo.ShowDialog();
+
+                    log.Info($"Se registro persona: {persona.Nombres} {persona.Apellidos} {persona.NoDocumento} {persona.Descripcion}");
+                    
                 } else
                 {
                     MessageBox.Show("No se pudo registrar la persona");
@@ -98,24 +106,11 @@ namespace FionaWFApp
             }
         }
 
-        private Persona newPersona()
+        private void personasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            return new Persona
-            {
-                TipoDocumento = "C",
-                NoDocumento = "40219326557",
-                Nombres = "Alejandro",
-                Apellidos = "Rodriguez",
-                Sector = "Maria Auxiliadora",
-                Direccion = "Calle primera, casa #2",
-                Telefono = "8095864715",
-                Correo = "alexrodriguez@gmail.com",
-                FechaNacimiento = new DateTime(),
-                Sexo = "M",
-                ValorEstimadoPerdida = 152000.12m,
-                Descripcion = "Perdidas provocadas a vivienda",
-                Estado = "Pendiente"
-            };
+            frmReporteGeneral frmReporteGeneral = new frmReporteGeneral();
+            frmReporteGeneral.MdiParent = this;
+            frmReporteGeneral.Show();
         }
     }
 }

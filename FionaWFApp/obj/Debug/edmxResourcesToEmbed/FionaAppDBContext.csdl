@@ -22,5 +22,23 @@
   </EntityType>
   <EntityContainer Name="FionaWFAppBDEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Persona" EntityType="Self.Persona" />
+    <FunctionImport Name="SPUltimaPersona" ReturnType="Collection(FionaWFAppBDModel.SPUltimaPersona_Result)" />
   </EntityContainer>
+  <ComplexType Name="SPUltimaPersona_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="TipoDocumento" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="NoDocumento" Nullable="false" MaxLength="15" />
+    <Property Type="String" Name="Nombres" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Apellidos" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Sector" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Direccion" Nullable="false" MaxLength="150" />
+    <Property Type="String" Name="Telefono" Nullable="false" MaxLength="11" />
+    <Property Type="String" Name="Correo" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="FechaNacimiento" Nullable="false" />
+    <Property Type="DateTime" Name="FechaIngreso" Nullable="false" />
+    <Property Type="String" Name="Sexo" Nullable="false" MaxLength="1" />
+    <Property Type="Decimal" Name="ValorEstimadoPerdida" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="String" Name="Descripcion" Nullable="false" MaxLength="150" />
+    <Property Type="String" Name="Estado" Nullable="false" MaxLength="50" />
+  </ComplexType>
 </Schema>
